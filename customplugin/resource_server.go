@@ -27,22 +27,21 @@ func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 		// resource API calls 
         return nil
 }
-}
 
 func resourceServerRead(d *schema.ResourceData, m interface{}) error {
-	  client := m.(*MyClient)
+	  //client := m.(*MyClient)
 
 	  // Attempt to read from an upstream API
-	  obj, ok := client.Get(d.Id())
+	  //obj, ok := client.Get(d.Id())
 
 	  // If the resource does not exist, inform Terraform. We want to immediately
 	  // return here to prevent further processing.
-	  if !ok {
-		d.SetId("")
-		return nil
-	  }
+	  //if !ok {
+	 //	d.SetId("")
+	//	return nil
+	 // }
 
-	  d.Set("address", obj.Address)
+	  //d.Set("address", obj.Address)
 	  return nil
   
 }
@@ -53,9 +52,9 @@ func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
 
         if d.HasChange("address") {
                 // Try updating the address
-                if err := updateAddress(d, m); err != nil {
-                        return err
-                }
+               // if err := updateAddress(d, m); err != nil {
+               //         return err
+               // }
 
                 d.SetPartial("address")
         }

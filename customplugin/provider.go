@@ -1,11 +1,11 @@
-#root of the provider
+/*#root of the provider
 
 #The *schema.Provider type describes the provider's properties including:
 
 #the configuration keys it accepts
 #the resources it supports
 #any callbacks to configure
-
+*/
 package main
 
 import (
@@ -15,7 +15,7 @@ import (
 func Provider() *schema.Provider {
         return &schema.Provider{
                 ResourcesMap: map[string]*schema.Resource{
-				"<provider-name>_server": resourceServer(),
+				"example_server": resourceServer(),
 				},
         }
 }
